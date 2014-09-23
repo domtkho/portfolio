@@ -16,7 +16,10 @@ $(document).ready(function(){
 		return "#" + Math.random().toString(16).slice(2,8);
 	}
 
-	$("#bgColorChange").on("click", function(){
+	$("#bgColorChange").on("click", function(event){
+		event.preventDefault();
 		$('.content-section-a').css('background', randomHexColor());
+		$("img.img-responsive").toggleClass('animate');
 	});
+
 });
